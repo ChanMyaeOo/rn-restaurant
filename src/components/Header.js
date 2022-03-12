@@ -5,7 +5,7 @@ export default function Header() {
     return(
         <View style={styles.container}>
             <Text style={styles.lightHeader}>Grab your</Text>
-            <Text style={styles.boldHeader}>Delicous meal!</Text>
+            <Text style={styles.boldHeader}>delicous meal!</Text>
             <StatusBar />
         </View>
     )
@@ -14,7 +14,7 @@ export default function Header() {
 const styles = StyleSheet.create({
     container: {
         marginHorizontal: 25,
-        marginTop: 60,
+        marginTop: 40,
     },
     lightHeader: {
       fontSize: 35
