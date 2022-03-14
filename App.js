@@ -4,6 +4,7 @@ import Header from "./src/components/Header";
 import Search from "./src/components/Search";
 import { StatusBar } from "expo-status-bar";
 import Categories from "./src/components/Categories";
+import Restaurants from './src/components/Restaurants'
 export default function App() {
     const categories = [
         {
@@ -38,6 +39,7 @@ export default function App() {
             <Header />
             <Search setTerm={setTerm} />
             <Categories categories={categories} term={term} setTerm={setTerm} />
+            <Restaurants term={term} />
             <StatusBar />
         </View>
     );
