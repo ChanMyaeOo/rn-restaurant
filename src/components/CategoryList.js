@@ -1,13 +1,23 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
-export default function CategoryList({ name, imageUrl, index }) {
-    return(
-        <View style={[styles.container, index === 0 ? {marginLeft: 25} : {marginLeft: 15}]}>
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+export default function CategoryList({ name, imageUrl, index, active, handleOnPress }) {
+    return (
+        <TouchableOpacity onPress={handleOnPress}>
+        <View
+            style={[
+                styles.container,
+                index === 0 ? { marginLeft: 25 } : { marginLeft: 15 },
+                active
+                    ? { backgroundColor: "rgb(241, 186, 87)" }
+                    : { backgroundColor: "white" },
+            ]}
+        >
             <View style={styles.imageContainer}>
-                <Image style={styles.image} source={imageUrl}/>
+                <Image style={styles.image} source={imageUrl} />
             </View>
             <Text style={styles.header}>{name}</Text>
         </View>
-    )
+        </TouchableOpacity>
+    );
 }
 
 const styles = StyleSheet.create({
@@ -19,21 +29,21 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         marginVertical: 20,
-        elevation: 3
+        elevation: 3,
     },
     image: {
         width: 35,
-        height: 35
+        height: 35,
     },
     imageContainer: {
         width: 50,
         height: 50,
-        backgroundColor: 'white',
+        backgroundColor: "white",
         borderRadius: 50,
-        alignItems: 'center',
-        justifyContent: 'center'
+        alignItems: "center",
+        justifyContent: "center",
     },
     header: {
-        fontWeight: 'bold',
-    }
-})
+        fontWeight: "bold",
+    },
+});
