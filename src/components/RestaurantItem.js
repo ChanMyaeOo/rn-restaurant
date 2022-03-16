@@ -1,6 +1,10 @@
-import { View, Text, Image, StyleSheet } from "react-native";
-export default RestaurantItem = ({ restaurant }) => {
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { withNavigation } from "react-navigation";
+const RestaurantItem = ({ restaurant, navigation }) => {
     return (
+        <TouchableOpacity
+            onPress={() => navigation.navigate('Restaurant', { id: restaurant.id})}
+        >
         <View style={styles.container}>
             <Image
                 style={styles.image}
@@ -14,6 +18,7 @@ export default RestaurantItem = ({ restaurant }) => {
                 </View>
             </View>
         </View>
+        </TouchableOpacity>
     );
 };
 
@@ -43,3 +48,5 @@ const styles = StyleSheet.create({
         color: "gold",
     },
 });
+
+export default withNavigation(RestaurantItem)

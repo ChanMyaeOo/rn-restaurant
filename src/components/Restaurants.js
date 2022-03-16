@@ -10,8 +10,6 @@ export default function Restaurants({ term }) {
         searchRestaurants(term)
     }, [term])
 
-    console.log({ loading, data, error})
-
     if(loading) return <ActivityIndicator size="large" marginVertical={30} color="#0000ff"/>
 
     if(error) return(
